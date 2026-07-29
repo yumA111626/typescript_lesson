@@ -19,3 +19,13 @@ let negative2: number = -3.12;
 let single2: string = 'hello';
 let double2: string = "Hello";
 let back2: string = `Hello2`;
+
+// object に型をつける
+
+const person :{
+    name : string;
+    age :number;
+} = {
+    name : "Yuma",
+    age :20
+}
