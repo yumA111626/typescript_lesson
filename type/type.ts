@@ -65,3 +65,19 @@ unionType.toUpperCase();
 
 // 配列として代入する
 let unionType2: (number | string)[] = [21 , "Hello"];
+
+// literal に関して
+// 指定したものしか値を入れることができなくなる
+const apple: "apple" = "apple" ; // "apple" しか代入することはできない
+
+// literal のメリット（特定の値の選択肢からしか受け付けないように可能）
+let clothSize: "small" | "Medium" | "Large" = "small"; // Small , Medium , Large からしか選択することはできない
+
+// 明示的に型を指定することでenumのようにとる値に制限を設けることが可能
+const cloth :{
+    color: string,
+    size: "small" | "Medium" | "Large"
+} = {
+    color : "White",
+    size : "Large"
+}
