@@ -36,3 +36,9 @@ const fruitAndNumber = ["Apple" , "Banana" , "Grape" , 1]
 
 // 型の指定をしてしまうと、配列には型指定したものしか入れることはできない
 const fruit_str : string[] = ["Apple" , "Banana" , "Grape"] // この配列にはstringしか入れることはできない
+
+// Tuple型 に関して記載
+// 明示的に配列の要素の型を指定したい時にTupleを使用する
+const fruit_tuple :[string , number , boolean] = ["Apple" , 1500 , false];
+fruit_tuple.push(30) // 初期値は厳密に指定するが、後の操作は厳しくない
+console.log(fruit_tuple)
