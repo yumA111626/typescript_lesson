@@ -29,3 +29,10 @@ const person :{
     name : "Yuma",
     age :20
 }
+
+// 配列の書き方
+const fruit = ["Apple" , "Banana" , "Grape"]
+const fruitAndNumber = ["Apple" , "Banana" , "Grape" , 1]
+
+// 型の指定をしてしまうと、配列には型指定したものしか入れることはできない
+const fruit_str : string[] = ["Apple" , "Banana" , "Grape"] // この配列にはstringしか入れることはできない
