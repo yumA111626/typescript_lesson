@@ -81,3 +81,6 @@ const cloth :{
     color : "White",
     size : "Large"
 }
+
+// type エイリアスに関して
+type cloth = "small" | "Medium" | "Large" // 特定の名称の型を作成することが可能。しかし、すでにある型名にすることができない
