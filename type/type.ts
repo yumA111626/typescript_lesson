@@ -42,3 +42,26 @@ const fruit_str : string[] = ["Apple" , "Banana" , "Grape"] // この配列に�
 const fruit_tuple :[string , number , boolean] = ["Apple" , 1500 , false];
 fruit_tuple.push(30) // 初期値は厳密に指定するが、後の操作は厳しくない
 console.log(fruit_tuple)
+
+// enum型に関して
+enum Coffee_size  {
+    SHORT = "Short",
+    TALL = "Tall",
+    GRANDE = "Grande",
+    VENTI = "Venti"
+}
+
+const Coffee = {
+    hot : true,
+    size : Coffee_size.TALL
+}
+
+// union 型について
+let unionType: number | string = 10;
+// unionType.toUpperCase(); // はじめに10を代入しているためこの変数の方はnumberとなる
+
+unionType = "Hello";
+unionType.toUpperCase();
+
+// 配列として代入する
+let unionType2: (number | string)[] = [21 , "Hello"];
