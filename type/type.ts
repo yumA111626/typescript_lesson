@@ -84,3 +84,11 @@ const cloth :{
 
 // type エイリアスに関して
 type cloth = "small" | "Medium" | "Large" // 特定の名称の型を作成することが可能。しかし、すでにある型名にすることができない
+
+// 関数に型をつける
+// 引数に型注釈を記載しない場合は、型推論でany型になってしまう
+function add(num1: number , num2: number): number {
+    return num1 + num2;
+}
+
+add(3,4)
