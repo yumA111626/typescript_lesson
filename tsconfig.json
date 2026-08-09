@@ -40,5 +40,12 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  // コンパイル対象から除外する
+  // "exclude": [
+  //   "./type/type.ts"
+  // ],
+  // "files": [
+  //   "section_3/lesson.ts"
+  // ]
 }
