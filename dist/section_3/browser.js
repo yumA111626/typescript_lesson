@@ -1,4 +1,4 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-console.log("Compiler!");
-//# sourceMappingURL=test_conpiler.js.map
+let hello2 = "hello";
+console.log(hello2.toUpperCase);
