@@ -6,7 +6,11 @@ class Person {
     constructor(initName) {
         this.name = initName;
     }
+    // method を作成する
+    greeting() {
+        console.log(`Hello my name is ${this.name}`);
+    }
 }
 // インスタンス生成
 const yuma = new Person("yuma");
-console.log(yuma);
+yuma.greeting();
