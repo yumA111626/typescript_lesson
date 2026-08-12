@@ -6,7 +6,7 @@ class Person{
     }
 
     // method を作成する (メソッドに明示的に型を指定する)
-    greeting(this : { name : string}){
+    greeting(this :Person){
         console.log(`Hello my name is ${this.name}`)
     }
 }
