@@ -2,11 +2,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Person {
     name;
-    age; // クラス外からはアクセスしないようにする
-    // インスタンス生成時に最初に実行される関数
-    constructor(initName, initAge) {
-        this.name = initName;
-        this.age = initAge;
+    age;
+    // name : string;
+    // private age : number; // クラス外からはアクセスしないようにする（先頭に#をつけることによってprivateと同じにすることが可能）
+    // // インスタンス生成時に最初に実行される関数
+    // constructor(initName : string , initAge : number){
+    //     this.name = initName;
+    //     this.age = initAge;
+    // }
+    // 初期化の処理を省略して記載する
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
     }
     // 年齢を増加する
     incrementAge() {

@@ -8,6 +8,9 @@ class Person{
         this.age = initAge;
     }
 
+    // 初期化の処理を省略して記載する場合
+    // constructor(public name : string , private age  : number){}
+
     // 年齢を増加する
     incrementAge(){
         this.age++
