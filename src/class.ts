@@ -26,8 +26,19 @@ class Person{
 
 // 継承について (extends)
 class Teacher extends Person{
+    
+    get subject(){
+        if(!this._subject){
+            throw Error("There is no subject.")
+        }
+        return this._subject
+    }
+
+    set subject(value :string){
+        this._subject = value;
+    }
     // コンストラクタを記載したい場合(継承したクラスを拡張したい場合)
-    constructor(name : string , age : number , public subject : string){
+    constructor(name : string , age : number , private _subject : string){
         super(name , age);
     }
     // method を上書きして使用する
@@ -38,4 +49,7 @@ class Teacher extends Person{
 
 // インスタンス生成
 const teacher = new Teacher("Tanaka" , 33 , "Math")
+console.log(teacher.subject)
+teacher.subject = "Music";
+console.log(teacher.subject)
 teacher.greeting();

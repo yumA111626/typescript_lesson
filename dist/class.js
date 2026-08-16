@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 class Person {
     name; // readonly と記載することによって、外部から書き換えをすることができなくなる
     id = 32; // readonly と記載することによって、外部から書き換えをすることができなくなる
-    age; // クラス外からはアクセスしないようにする（先頭に#をつけることによってprivateと同じにすることが可能）
+    age; // protected 継承先のクラスまではアクセスすることが可能
     // インスタンス生成時に最初に実行される関数
     constructor(initName, initAge) {
         this.name = initName;
@@ -23,7 +23,29 @@ class Person {
 }
 // 継承について (extends)
 class Teacher extends Person {
+    _subject;
+    get subject() {
+        if (!this._subject) {
+            throw Error("There is no subject.");
+        }
+        return this._subject;
+    }
+    set subject(value) {
+        this._subject = value;
+    }
+    // コンストラクタを記載したい場合(継承したクラスを拡張したい場合)
+    constructor(name, age, _subject) {
+        super(name, age);
+        this._subject = _subject;
+    }
+    // method を上書きして使用する
+    greeting() {
+        console.log(`Hello my name is ${this.name}. I am ${this.age} years old. I teach ${this.subject}`);
+    }
 }
 // インスタンス生成
-const teacher = new Teacher("Tanaka", 33);
+const teacher = new Teacher("Tanaka", 33, "Math");
+console.log(teacher.subject);
+teacher.subject = "Music";
+console.log(teacher.subject);
 teacher.greeting();
