@@ -1,10 +1,10 @@
 class Person{
-    readonly name : string; // readonly と記載することによって、外部から書き換えをすることができなくなる
+    name : string; // readonly と記載することによって、外部から書き換えをすることができなくなる
     readonly id : number = 32; // readonly と記載することによって、外部から書き換えをすることができなくなる
-    private age : number; // クラス外からはアクセスしないようにする（先頭に#をつけることによってprivateと同じにすることが可能）
+    protected age : number; // protected 継承先のクラスまではアクセスすることが可能
 
     // インスタンス生成時に最初に実行される関数
-    constructor(readonly initName : string , initAge : number){
+    constructor(initName : string , initAge : number){
         this.name = initName;
         this.age = initAge;
         this.id = 33; // コンストラクタ関数内では値の書き換えは実行可能
@@ -23,7 +23,19 @@ class Person{
         console.log(`Hello my name is ${this.name}. I am ${this.age} years old.`)
     }
 }
+
+// 継承について (extends)
+class Teacher extends Person{
+    // コンストラクタを記載したい場合(継承したクラスを拡張したい場合)
+    constructor(name : string , age : number , public subject : string){
+        super(name , age);
+    }
+    // method を上書きして使用する
+    greeting(){
+        console.log(`Hello my name is ${this.name}. I am ${this.age} years old. I teach ${this.subject}`)
+    }
+}
+
 // インスタンス生成
-const yuma = new Person("yuma" , 25);
-yuma.incrementAge();
-yuma.greeting();
+const teacher = new Teacher("Tanaka" , 33 , "Math")
+teacher.greeting();
